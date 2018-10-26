@@ -1,0 +1,37 @@
+
+<app-menu></app-menu>
+
+<div>
+    <h1 translate>Title</h1>
+  
+<div >
+  {{ 'Intro' | translate:user }}
+</div>
+    <label>
+      <select #langSelect (change)="translate.use(langSelect.value)">
+        <option *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang">{{ lang }}</option>
+      </select>
+    </label>
+  </div>
+
+<router-outlet></router-outlet>
+
+
+
+
+<!--   Versions for plugins for localization (@ngx-translate/core && 	@ngx-translate/http-loader)
+
+Angular	@ngx-translate/core   	@ngx-translate/http-loader
+7	             11.x+	                4.x+
+6	             10.x	                  3.x
+5	             8.x to 9.x	            1.x to 2.x
+4.3	           7.x or less	          1.x to 2.x
+2 to 4.2.x	   7.x or less	          0.x 
+-->
+
+ 
+<!--  Nested Json (at last)
+  
+  https://medium.com/letsboot/translate-angular-4-apps-with-ngx-translate-83302fb6c10d 
+
+-->
